@@ -698,7 +698,8 @@ void MountAll()
             break;
         }
 
-        if ((strstr(line, "trying")) && (!strstr(line, "NFS version 2")) && (!strstr(line, "vers 3")))
+        if ((strstr(line, "trying")) && (!strstr(line, "NFS version 2")) && (!strstr(line, "vers 3")) &&
+            (!strstr(line, "text-based options")))
         {
             CfOut(OUTPUT_LEVEL_ERROR, "", "Attempting abort because mount went into a retry loop.\n");
             break;
